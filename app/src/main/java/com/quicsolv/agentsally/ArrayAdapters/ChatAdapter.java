@@ -1,4 +1,4 @@
-package com.quicsolv.agentsally.arrayAdapters;
+package com.quicsolv.agentsally.arrayadapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

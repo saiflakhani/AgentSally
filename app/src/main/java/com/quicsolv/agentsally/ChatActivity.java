@@ -9,7 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.quicsolv.agentsally.arrayAdapters.ChatAdapter;
+import com.quicsolv.agentsally.arrayadapters.ChatAdapter;
+import com.quicsolv.agentsally.asynctasks.GetTelegramUpdates;
 import com.quicsolv.agentsally.pojo.MessageAttributes;
 
 import java.util.ArrayList;
@@ -60,11 +61,18 @@ public class ChatActivity extends Activity {
         chatList.add(newMessage);
         chatAdapter.notifyDataSetChanged();
         eTtypeMessage.setText("");
-        MessageAttributes replyMessage = new MessageAttributes(false,messageText);
-        chatList.add(replyMessage);
+
+
+        sendMessageResponse();
+        /*MessageAttributes replyMessage = new MessageAttributes(false,messageText);
+        chatList.add(replyMessage);*/
         chatAdapter.notifyDataSetChanged();
         //scrollListViewToBottom();
 
+    }
+
+    private void sendMessageResponse() {
+        new GetTelegramUpdates(this).execute();
     }
 
     /*private void scrollListViewToBottom() {

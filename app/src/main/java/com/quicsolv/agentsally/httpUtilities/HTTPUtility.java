@@ -1,4 +1,4 @@
-package com.quicsolv.agentsally.httpUtilities;
+package com.quicsolv.agentsally.httputilities;
 
 import android.util.Log;
 
